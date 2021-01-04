@@ -1,7 +1,7 @@
 import { put, delay, takeLatest } from "redux-saga/effects";
 
 function* scoreUpAsync() {
-  yield delay(2000);
+  yield delay(1000);
   yield put({ type: "SCORE_UP_ASYNC", value: 1 });
 }
 

@@ -3,13 +3,14 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import createSagaMiddleware from "redux-saga";
+import thunk from "redux-thunk";
 import watchScoreUp from "./saga/saga";
 
 import reducer from "./store/reducer";
 import App from "./App";
 
 const sagaMiddleware = createSagaMiddleware();
-const store = createStore(reducer, applyMiddleware(sagaMiddleware));
+const store = createStore(reducer, applyMiddleware(sagaMiddleware, thunk));
 
 // It will run watcher on every saga you pass as parameter, it can be more than one too
 sagaMiddleware.run(watchScoreUp);
