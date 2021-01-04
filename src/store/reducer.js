@@ -1,18 +1,11 @@
 const initState = {
-  age: 20,
   score: 10,
 };
 
 function reducer(state = initState, action) {
-  const newState = { ...initState };
+  const newState = { ...state };
   switch (action.type) {
-    case "AGE_UP":
-      newState.age = newState.age + action.value;
-      break;
-    case "AGE_DOWN":
-      newState.age = newState.age - action.value;
-      break;
-    case "SCORE_UP":
+    case "SCORE_UP_ASYNC":
       newState.score = newState.score + action.value;
       break;
     case "SCORE_DOWN":
