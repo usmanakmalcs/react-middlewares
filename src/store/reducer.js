@@ -1,5 +1,6 @@
 const initState = {
   score: 10,
+  age: 0,
 };
 
 function reducer(state = initState, action) {
